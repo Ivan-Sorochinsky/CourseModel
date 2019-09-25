@@ -1,9 +1,12 @@
 package ru.sorochinsky.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class Course {
@@ -11,11 +14,25 @@ public class Course {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
+    @NotNull
     private String name;
 
+    @NotNull
     private Integer number;
 
+    @NotNull
     private Float cost;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "point")
+    private Set<CoursePoint> pointList = new HashSet<>();
+
+    public Set<CoursePoint> getPointList() {
+        return pointList;
+    }
+
+    public void setPointList(Set<CoursePoint> pointList) {
+        this.pointList = pointList;
+    }
 
     public Long getId() {
         return id;

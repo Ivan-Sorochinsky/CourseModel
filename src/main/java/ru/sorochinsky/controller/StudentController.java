@@ -34,6 +34,7 @@ public class StudentController {
         n.setEmail(email);
         n.setNumber_gradebook(number_gradebook);
         n.setAverage_performance(average_performance);
+//          добавить поверку полей на NotNull
         studentRepository.save(n);
         Iterable<Student> students = studentRepository.findAll();
         model.put("students", students);

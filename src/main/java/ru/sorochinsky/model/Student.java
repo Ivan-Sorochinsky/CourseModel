@@ -1,9 +1,9 @@
 package ru.sorochinsky.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class Student {
@@ -11,17 +11,30 @@ public class Student {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
+    @NotNull
     private String name;
 
+    @NotNull
     private String address;
 
+    @NotNull
     private String phone;
 
+    @NotNull
     private String email;
 
+    @NotNull
     private Integer number_gradebook;
 
+    @NotNull
     private Float average_performance;
+
+//    @OneToMany(fetch = FetchType.EAGER)
+//    private Set<Course> courseList = new HashSet<>();
+//    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    private CourseProgress courseProgress;
+//    @OneToOne(fetch =  FetchType.EAGER, cascade = CascadeType.ALL)
+//    private Course course;
 
 
     public String getName() {
