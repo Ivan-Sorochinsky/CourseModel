@@ -1,12 +1,8 @@
 package ru.sorochinsky.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class Course {
@@ -23,15 +19,37 @@ public class Course {
     @NotNull
     private Float cost;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "point")
-    private Set<CoursePoint> pointList = new HashSet<>();
+    @OneToOne(optional = false, mappedBy="course")
+    private CourseProgress courseProgress;
 
-    public Set<CoursePoint> getPointList() {
-        return pointList;
+    @OneToOne(optional = false, mappedBy="course")
+    private Professor professor;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "course")
+    private List<Student> students;
+
+    public CourseProgress getCourseProgress() {
+        return courseProgress;
     }
 
-    public void setPointList(Set<CoursePoint> pointList) {
-        this.pointList = pointList;
+    public void setCourseProgress(CourseProgress courseProgress) {
+        this.courseProgress = courseProgress;
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
+
+    public Professor getProfessor() {
+        return professor;
+    }
+
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
     }
 
     public Long getId() {
@@ -66,12 +84,4 @@ public class Course {
         this.cost = cost;
     }
 
-    //Add student
-    public void addStudent(Student student){
-
-    }
-    //Delete student
-    public void deleteStudent(Student student){
-
-    }
 }

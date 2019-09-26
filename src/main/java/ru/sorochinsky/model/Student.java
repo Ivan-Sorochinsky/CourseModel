@@ -2,8 +2,7 @@ package ru.sorochinsky.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class Student {
@@ -29,13 +28,19 @@ public class Student {
     @NotNull
     private Float average_performance;
 
-//    @OneToMany(fetch = FetchType.EAGER)
-//    private Set<Course> courseList = new HashSet<>();
-//    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//    private CourseProgress courseProgress;
-//    @OneToOne(fetch =  FetchType.EAGER, cascade = CascadeType.ALL)
-//    private Course course;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "student")
+    private List<CourseProgress> courseProgresses;
 
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Course course;
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
 
     public String getName() {
         return name;

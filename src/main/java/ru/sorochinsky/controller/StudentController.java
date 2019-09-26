@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import ru.sorochinsky.model.Student;
 import ru.sorochinsky.repositiry.StudentRepository;
 
@@ -35,6 +34,7 @@ public class StudentController {
         n.setNumber_gradebook(number_gradebook);
         n.setAverage_performance(average_performance);
 //          добавить поверку полей на NotNull
+
         studentRepository.save(n);
         Iterable<Student> students = studentRepository.findAll();
         model.put("students", students);
