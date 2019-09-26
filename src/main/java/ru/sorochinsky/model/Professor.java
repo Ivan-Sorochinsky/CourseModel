@@ -2,6 +2,13 @@ package ru.sorochinsky.model;
 
 import javax.persistence.*;
 
+/**
+ * Simple JavaBean object that represents role of {@link Professor}
+ *
+ * @author Ivan Sorochinsky
+ * @version 1.0
+ */
+
 @Entity // This tells Hibernate to make a table out of this class
 public class Professor {
     @Id
@@ -16,7 +23,9 @@ public class Professor {
 
     private Float payment;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = false)
+//    Некоторые курсы не требуют инструктора и расчитаны на самостоятельное изучение
+//    optional = true - необязательное поле
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = true)
     private Course course;
 
     public Course getCourse() {

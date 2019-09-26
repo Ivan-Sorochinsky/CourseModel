@@ -10,6 +10,13 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 
 import javax.sql.DataSource;
 
+/**
+ * Security config class
+ *
+ * @author Ivan Sorochinsky
+ * @version 1.0
+ */
+
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {

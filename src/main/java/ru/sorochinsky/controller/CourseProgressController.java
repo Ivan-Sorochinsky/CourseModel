@@ -13,6 +13,13 @@ import ru.sorochinsky.repositiry.CourseProgressRepository;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Controller for {@link ru.sorochinsky.model.CourseProgress}'s pages.
+ *
+ * @author Ivan Sorochinsky
+ * @version 1.0
+ */
+
 @Controller    // This means that this class is a Controller
 @RequestMapping(path="/course_progress_controller") // This means URL's start with /course_progress_controller (after Application path)
 public class CourseProgressController {

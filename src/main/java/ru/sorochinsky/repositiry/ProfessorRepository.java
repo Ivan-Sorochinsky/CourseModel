@@ -1,5 +1,12 @@
 package ru.sorochinsky.repositiry;
 
+/**
+ * Repository class for {@link ru.sorochinsky.model.Professor}
+ *
+ * @author Ivan Sorochinsky
+ * @version 1.0
+ */
+
 // This will be AUTO IMPLEMENTED by Spring into a Bean called professorRepository
 // CRUD refers Create, Read, Update, Delete
 

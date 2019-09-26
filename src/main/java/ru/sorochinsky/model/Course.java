@@ -4,6 +4,13 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
+/**
+ * Simple JavaBean object that represents role of {@link Course}
+ *
+ * @author Ivan Sorochinsky
+ * @version 1.0
+ */
+
 @Entity // This tells Hibernate to make a table out of this class
 public class Course {
     @Id

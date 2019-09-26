@@ -11,6 +11,13 @@ import ru.sorochinsky.repositiry.StudentRepository;
 
 import java.util.Map;
 
+/**
+ * Controller for {@link ru.sorochinsky.model.Student}'s pages.
+ *
+ * @author Ivan Sorochinsky
+ * @version 1.0
+ */
+
 @Controller    // This means that this class is a Controller
 @RequestMapping(path="/student_controller") // This means URL's start with /student_controller (after Application path)
 public class StudentController {

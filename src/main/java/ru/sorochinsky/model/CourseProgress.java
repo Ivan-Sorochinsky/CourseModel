@@ -3,6 +3,13 @@ package ru.sorochinsky.model;
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * Simple JavaBean object that represents role of {@link CourseProgress}
+ *
+ * @author Ivan Sorochinsky
+ * @version 1.0
+ */
+
 @Entity // This tells Hibernate to make a table out of this class
 public class CourseProgress {
     @Id

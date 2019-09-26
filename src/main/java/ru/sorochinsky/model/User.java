@@ -3,6 +3,13 @@ package ru.sorochinsky.model;
 import javax.persistence.*;
 import java.util.Set;
 
+/**
+ * Simple JavaBean object that represents role of {@link User}
+ *
+ * @author Ivan Sorochinsky
+ * @version 1.0
+ */
+
 @Entity
 @Table(name = "usr")
 public class User {

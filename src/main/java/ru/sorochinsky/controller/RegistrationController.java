@@ -13,6 +13,13 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Controller for {@link ru.sorochinsky.model.Role} registration pages.
+ *
+ * @author Ivan Sorochinsky
+ * @version 1.0
+ */
+
 @Controller
 public class RegistrationController {
 

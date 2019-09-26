@@ -53,7 +53,7 @@
 <h2>Professor</h2>
 <p></p>
 <div>
-    <form method="post" action="/professor_controller/professor">
+    <form method="post" action="/course_controller/professor">
         <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
         <input type="text" name="name" placeholder="Name" />
         <input type="text" name="address" placeholder="Address">
@@ -72,7 +72,7 @@
         <th>Payment</th>
     </tr>
 
-    {{#professor}}
+    {{#professorIterable}}
         <tr>
             <td>{{id}}</td>
             <td>{{name}}</td>
@@ -80,7 +80,7 @@
             <td>{{phone}}</td>
             <td>{{payment}}</td>
         </tr>
-    {{/professor}}
+    {{/professorIterable}}
 
 </table>
 <p>______________________________</p>
