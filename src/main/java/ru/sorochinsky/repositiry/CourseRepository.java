@@ -1,6 +1,8 @@
 package ru.sorochinsky.repositiry;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import ru.sorochinsky.model.Course;
 
 /**
@@ -13,5 +15,9 @@ import ru.sorochinsky.model.Course;
 // This will be AUTO IMPLEMENTED by Spring into a Bean called courseRepository
 // CRUD refers Create, Read, Update, Delete
 
-public interface CourseRepository extends CrudRepository<Course, Long>{
+public interface CourseRepository extends JpaRepository<Course, Long> {
+
+    @Query("select s from Course s where s.name = :name")
+    Course findByName(@Param("name") String name);
+
 }

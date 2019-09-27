@@ -1,5 +1,10 @@
 package ru.sorochinsky.repositiry;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import ru.sorochinsky.model.Professor;
+
 /**
  * Repository class for {@link ru.sorochinsky.model.Professor}
  *
@@ -10,8 +15,9 @@ package ru.sorochinsky.repositiry;
 // This will be AUTO IMPLEMENTED by Spring into a Bean called professorRepository
 // CRUD refers Create, Read, Update, Delete
 
-import org.springframework.data.repository.CrudRepository;
-import ru.sorochinsky.model.Professor;
+public interface ProfessorRepository extends JpaRepository<Professor, Long> {
 
-public interface ProfessorRepository extends CrudRepository<Professor, Long> {
+    @Query("select s from Professor s where s.name = :name")
+    Professor findByName(@Param("name") String name);
+
 }

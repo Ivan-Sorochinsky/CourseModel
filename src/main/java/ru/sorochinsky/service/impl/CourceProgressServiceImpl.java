@@ -1,6 +1,10 @@
 package ru.sorochinsky.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ru.sorochinsky.model.CourseProgress;
+import ru.sorochinsky.repositiry.CourseProgressRepository;
+import ru.sorochinsky.repositiry.CourseRepository;
 import ru.sorochinsky.service.CourseProgressService;
 
 import java.util.List;
@@ -12,7 +16,12 @@ import java.util.List;
  * @version 1.0
  */
 
+@Service
 public class CourceProgressServiceImpl implements CourseProgressService {
+
+    @Autowired
+    private CourseProgressRepository courseProgressRepository;
+
     @Override
     public CourseProgress addCourseProgress(CourseProgress courseProgress) {
         return null;
@@ -20,7 +29,7 @@ public class CourceProgressServiceImpl implements CourseProgressService {
 
     @Override
     public void delete(Long id) {
-
+        courseProgressRepository.deleteById(id);
     }
 
     @Override

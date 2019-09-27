@@ -1,7 +1,10 @@
 package ru.sorochinsky.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ru.sorochinsky.model.Course;
 import ru.sorochinsky.model.Student;
+import ru.sorochinsky.repositiry.CourseRepository;
 import ru.sorochinsky.service.CourseService;
 
 import java.util.List;
@@ -13,30 +16,36 @@ import java.util.List;
  * @version 1.0
  */
 
+@Service
 public class CourseServiceImpl implements CourseService {
+
+    @Autowired
+    private CourseRepository courseRepository;
+
     @Override
     public Course addCourse(Course course) {
-        return null;
+        Course savedCourse = courseRepository.saveAndFlush(course);
+        return savedCourse;
     }
 
     @Override
     public void delete(Long id) {
-
+        courseRepository.deleteById(id);
     }
 
     @Override
     public Course getByName(String name) {
-        return null;
+        return courseRepository.findByName(name);
     }
 
     @Override
     public Course editCourse(Course course) {
-        return null;
+        return courseRepository.saveAndFlush(course);
     }
 
     @Override
     public List<Course> getAll() {
-        return null;
+        return courseRepository.findAll();
     }
 
     @Override
