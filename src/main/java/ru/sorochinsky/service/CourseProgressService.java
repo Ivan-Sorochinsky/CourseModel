@@ -21,4 +21,6 @@ public interface CourseProgressService {
 //    Дополнительные методы согласно заданию:
 //    - получить текущий средний балл (void)
 //    - получить финальную отметку (void)
+    void avgPoint(List<Integer> points);
+    void finalPoint(Integer finalPoint);
 }

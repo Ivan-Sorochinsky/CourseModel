@@ -1,5 +1,7 @@
 package ru.sorochinsky.service;
 
+import ru.sorochinsky.model.Course;
+import ru.sorochinsky.model.CourseProgress;
 import ru.sorochinsky.model.Student;
 
 import java.util.List;
@@ -21,4 +23,6 @@ public interface StudentService {
 //    Дополнительные методы согласно заданию:
 //    - записаться на курс (void)
 //    - получить список прослушанных курсов (void / проверка по полю  "boolean completed")
+    void addStudentInCourse(Course course, Student student);
+    void listEndCourse(List<CourseProgress> completed);
 }
