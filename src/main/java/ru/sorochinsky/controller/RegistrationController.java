@@ -4,17 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import ru.sorochinsky.model.Role;
+import ru.sorochinsky.model.enums.Role;
 import ru.sorochinsky.model.User;
 import ru.sorochinsky.repositiry.UserRepositiry;
 
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 /**
- * Controller for {@link ru.sorochinsky.model.Role} registration pages.
+ * Controller for {@link Role} registration pages.
  *
  * @author Ivan Sorochinsky
  * @version 1.0

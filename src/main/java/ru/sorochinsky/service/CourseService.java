@@ -1,6 +1,7 @@
 package ru.sorochinsky.service;
 
 import ru.sorochinsky.model.Course;
+import ru.sorochinsky.model.Student;
 
 import java.util.List;
 
@@ -21,4 +22,6 @@ public interface CourseService {
 //    Дополнительные методы согласно заданию:
 //    - добавить студента (void)
 //    - удалить студента (void)
+    void addStudent(Course course, Student student);
+    void delStudent(Course course, Student student);
 }

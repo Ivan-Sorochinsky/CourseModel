@@ -17,8 +17,4 @@ public interface ProfessorService {
     Professor getByName(String name);
     Professor editProfessor(Professor professor);
     List<Professor> getAll();
-
-//    Дополнительные методы согласно заданию:
-//    - получить текущий средний балл (void)
-//    - получить финальную отметку (void)
 }

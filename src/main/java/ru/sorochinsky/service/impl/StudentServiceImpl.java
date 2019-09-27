@@ -1,5 +1,7 @@
 package ru.sorochinsky.service.impl;
 
+import ru.sorochinsky.service.StudentService;
+
 /**
  * Implementation of {@link ru.sorochinsky.service.StudentService} interface.
  *
@@ -7,5 +9,5 @@ package ru.sorochinsky.service.impl;
  * @version 1.0
  */
 
-public class StudentServiceImpl {
+public class StudentServiceImpl implements StudentService {
 }

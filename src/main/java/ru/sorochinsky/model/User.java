@@ -1,5 +1,7 @@
 package ru.sorochinsky.model;
 
+import ru.sorochinsky.model.enums.Role;
+
 import javax.persistence.*;
 import java.util.Set;
 

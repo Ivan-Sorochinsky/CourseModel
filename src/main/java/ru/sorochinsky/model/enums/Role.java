@@ -1,4 +1,4 @@
-package ru.sorochinsky.model;
+package ru.sorochinsky.model.enums;
 
 /**
  * Enum of roles
